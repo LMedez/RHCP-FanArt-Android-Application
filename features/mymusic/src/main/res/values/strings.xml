@@ -1,0 +1,14 @@
+<resources>
+    <string name="add_songs">Add Songs to create your own playlist!</string>
+    <string name="search">Search Music</string>
+    <string name="recent_added">Recent Added</string>
+    <string name="create_playlist">Create playlist</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="label">Title</string>
+    <string name="search_music">Search music</string>
+    <string name="description">Description (Optional)</string>
+    <string name="search_songs">Search songs to add in your own playlist!</string>
+    <string name="snack_description_text">Please, add a description to save the playlist</string>
+    <string name="snack_title_text">Please, add a title to save the playlist</string>
+    <string name="suggested">Suggested</string>
+</resources>

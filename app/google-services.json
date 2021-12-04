@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "64151519819",
+    "project_id": "rhcp-fan-art",
+    "storage_bucket": "rhcp-fan-art.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:64151519819:android:081a55c7f0fed3a5c203ce",
+        "android_client_info": {
+          "package_name": "com.luc.rhcpfanart"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "64151519819-lnpn3sgrhcjcf3mjsbh69ai5qs47qud9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAoU2IXQIzaHqkKyynFLxlrH6oBN6EFVl8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "64151519819-lnpn3sgrhcjcf3mjsbh69ai5qs47qud9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

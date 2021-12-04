@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Widget.Rfa.TabLayout" parent="Widget.MaterialComponents.TabLayout">
+        <item name="tabIndicatorColor">?attr/colorSurface</item>
+        <item name="tabSelectedTextColor">@color/red_300</item>
+        <item name="tabMode">fixed</item>
+        <item name="materialThemeOverlay">@style/ThemeOverlay.Rfa.TabLayout</item>
+        <item name="tabTextAppearance">?attr/textAppearanceSubtitle2</item>
+    </style>
+
+    <style name="Widget.Rfa.Slider" parent="Widget.MaterialComponents.Slider">
+        <item name="labelStyle">@style/Widget.Rfa.Tooltip</item>
+    </style>
+
+    <style name="Widget.Rfa.Tooltip" parent="Widget.MaterialComponents.Tooltip">
+        <item name="android:textAppearance">@style/TextAppearance.Rfa.Tooltip</item>
+        <item name="backgroundTint">?attr/colorOnSurface</item>
+    </style>
+
+    <style name="Widget.Rfa.TextInputLayout.Large" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.Rfa.TextInputLayout.Large</item>
+        <item name="boxBackgroundColor">@color/red_300</item>
+    </style>
+
+    <style name="Widget.Rfa.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.Rfa.TextInputLayout</item>
+        <item name="boxBackgroundColor">@color/red_300</item>
+    </style>
+
+    <style name="Widget.Rfa.SearchViewStyle" parent="Widget.AppCompat.SearchView">
+        <!--search view customization-->
+        <item name="queryBackground">?attr/colorSurface</item>
+        <item name="queryHint">@string/search_music</item>
+    </style>
+
+    <style name="Widget.Rfa.Button" parent="Widget.MaterialComponents.Button">
+        <item name="shapeAppearance">@style/ShapeAppearance.Rfa.SmallComponent</item>
+    </style>
+
+</resources>

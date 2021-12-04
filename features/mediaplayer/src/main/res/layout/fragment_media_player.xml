@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    tools:context=".MediaPlayerFragment">
+
+    <LinearLayout
+        android:id="@+id/contentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="parent">
+
+        <fragment
+            android:layout_weight="1"
+            android:id="@+id/fragment"
+            android:name="com.luc.mediaplayer.mediaplayerdetail.MediaPlayerDetailFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:id="@+id/actionsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorSurface"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragment">
+
+            <FrameLayout
+                android:layout_weight="1"
+                android:layout_marginStart="@dimen/padding_regular"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageButton
+                    android:layout_gravity="center"
+                    android:id="@+id/shuffle"
+                    android:layout_width="@dimen/image_regular"
+                    android:layout_height="@dimen/image_regular"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:src="@drawable/ic_shuffle" />
+
+                <ImageButton
+                    android:visibility="gone"
+                    app:tint="?attr/colorPrimary"
+                    android:id="@+id/shuffleActivated"
+                    android:layout_width="@dimen/image_regular"
+                    android:layout_height="@dimen/image_regular"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:src="@drawable/ic_shuffle" />
+
+            </FrameLayout>
+
+            <ImageButton
+                android:id="@+id/skipToPrevious"
+                android:rotation="180"
+                android:layout_width="@dimen/image_regular"
+                android:layout_height="@dimen/image_regular"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/padding_regular"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_skip_next" />
+
+            <ImageButton
+                android:id="@+id/playPauseButton"
+                android:layout_width="@dimen/image_regular"
+                android:layout_height="@dimen/image_regular"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/padding_regular"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_play"
+                app:tint="?attr/colorPrimary" />
+
+            <ImageButton
+                android:id="@+id/skipNext"
+                android:layout_width="@dimen/image_regular"
+                android:layout_height="@dimen/image_regular"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/padding_regular"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_skip_next" />
+
+            <ImageButton
+                android:id="@+id/queueButton"
+                android:layout_width="@dimen/image_regular"
+                android:layout_height="@dimen/image_regular"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/padding_regular"
+                android:layout_marginEnd="@dimen/padding_regular"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_queue_music" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

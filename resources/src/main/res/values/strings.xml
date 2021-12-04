@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="favorites">Favorites</string>
+    <string name="play">Play</string>
+    <string name="shuffleIsEnabled">Shuffle mode is already enabled</string>
+    <string name="shuffleEnabled">Shuffle mode enabled</string>
+</resources>

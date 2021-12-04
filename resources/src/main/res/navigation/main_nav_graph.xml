@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.luc.home.HomeFragment"
+        android:label="HomeFragment">
+        <action
+            android:id="@+id/action_homeFragment_to_albumDetailFragment"
+            app:destination="@id/albumDetailFragment" />
+
+        <action
+            android:id="@+id/action_homeFragment_to_playListFragment"
+            app:destination="@id/playListFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_allSongs"
+            app:destination="@id/allSongs" />
+        <action
+            android:id="@+id/action_homeFragment_to_favFragment"
+            app:destination="@id/favFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/albumDetailFragment"
+        android:name="com.luc.albumdetail.AlbumDetailFragment"
+        android:label="fragment_album_detail">
+
+        <argument
+            android:name="album"
+            app:argType="com.luc.common.model.AlbumMetadata" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/playListFragment"
+        android:name="com.luc.mymusic.playlistfragment.PlayListFragment"
+        android:label="PlayListFragment">
+        <action
+            android:id="@+id/action_playListFragment_to_createPlayListFragment"
+            app:destination="@id/createPlayListFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/createPlayListFragment"
+        android:name="com.luc.mymusic.createplaylistfragment.CreatePlayListFragment"
+        android:label="CreatePlayListFragment">
+        <action
+            android:id="@+id/action_createPlayListFragment_to_allSongs"
+            app:destination="@id/allSongs" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/allSongs"
+        android:name="com.luc.mymusic.allsongsfragment.AllSongsFragment"
+        android:label="AllSongsFragment"/>
+
+    <fragment
+        android:id="@+id/favFragment"
+        android:name="com.luc.mymusic.favoritefragment.FavoriteFragment"
+        android:label="FavFragment">
+        <action
+            android:id="@+id/action_favFragment_to_albumDetailFragment"
+            app:destination="@id/albumDetailFragment" />
+    </fragment>
+
+
+</navigation>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- padding -->
+    <dimen name="padding_extra_small">4dp</dimen>
+    <dimen name="padding_small">8dp</dimen>
+    <dimen name="padding_small_medium">12dp</dimen>
+    <dimen name="padding_regular">16dp</dimen>
+    <dimen name="padding_regular_medium">20dp</dimen>
+    <dimen name="padding_medium">24dp</dimen>
+    <dimen name="padding_wide">32dp</dimen>
+    <dimen name="padding_wide_medium">36dp</dimen>
+    <dimen name="padding_big">48dp</dimen>
+    <dimen name="padding_extra_wide">64dp</dimen>
+
+
+    <!-- image size -->
+    <dimen name="image_small">30dp</dimen>
+    <dimen name="image_regular">40dp</dimen>
+    <dimen name="image_regular_medium">55dp</dimen>
+    <dimen name="image_medium">65dp</dimen>
+    <dimen name="image_wide">72dp</dimen>
+    <dimen name="image_wide_medium">86dp</dimen>
+    <dimen name="image_big">100dp</dimen>
+    <dimen name="image_extra_wide">160dp</dimen>
+    <dimen name="image_extra_super_wide">200dp</dimen>
+
+
+    <!-- elevation -->
+    <dimen name="elevation_regular">8dp</dimen>
+    <dimen name="elevation_regular_medium">12dp</dimen>
+    <dimen name="elevation_medium">24dp</dimen>
+
+    <!-- box size -->
+    <dimen name="box_regular">65dp</dimen>
+    <dimen name="boc_regular_medium">82dp</dimen>
+    <dimen name="box_medium">94dp</dimen>
+    <dimen name="box_wide">148dp</dimen>
+    <dimen name="box_wide_medium">162dp</dimen>
+
+</resources>

@@ -1,0 +1,30 @@
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
+android {
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            minifyEnabled = false
+            debuggable = true
+            ext.enableCrashlytics = false
+
+        }
+    }
+
+    flavorDimensions "type"
+    productFlavors {
+        dev {
+            dimension = "type"
+            resConfigs "en", "xxhdpi"
+        }
+
+        prod {
+            dimension = "type"
+        }
+    }
+}

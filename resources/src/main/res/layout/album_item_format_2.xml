@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/padding_regular">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/materialCardView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/padding_small"
+            app:cardCornerRadius="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/albumImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxHeight="500dp"
+                android:minHeight="200dp"
+                android:scaleType="center" />
+
+            <ImageButton
+                android:id="@+id/favButton"
+                android:layout_width="@dimen/image_regular"
+                android:layout_height="@dimen/image_regular"
+                android:layout_gravity="end"
+                android:layout_margin="@dimen/padding_regular"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:scaleX="0"
+                android:scaleY="0"
+                android:src="@drawable/ic_favorite"
+                app:tint="?attr/colorSurface" />
+
+            <ImageButton
+                android:id="@+id/favBorderButton"
+                android:layout_width="@dimen/image_regular"
+                android:layout_height="@dimen/image_regular"
+                android:layout_gravity="end"
+                android:layout_margin="@dimen/padding_regular"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_favorite_border"
+                app:tint="?attr/colorSurface" />
+
+            <ImageView
+                android:layout_width="@dimen/image_regular"
+                android:layout_height="@dimen/image_regular"
+                android:layout_gravity="start"
+                android:layout_margin="@dimen/padding_regular"
+                android:layout_marginStart="@dimen/padding_regular"
+                android:src="@drawable/ic_equalizer"
+                android:visibility="gone"
+                app:tint="?attr/colorSurface" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/padding_small"
+            android:layout_marginTop="@dimen/padding_medium"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="@+id/materialCardView2"
+            app:layout_constraintStart_toStartOf="@id/materialCardView2"
+            app:layout_constraintTop_toBottomOf="@+id/materialCardView2">
+
+            <TextView
+                android:id="@+id/albumTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?attr/textAppearanceSubtitle1" />
+
+            <TextView
+                android:id="@+id/artistName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?attr/textAppearanceCaption" />
+
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/playButton"
+            android:layout_width="@dimen/image_regular"
+            android:layout_height="@dimen/image_regular"
+            android:layout_marginEnd="@dimen/padding_small"
+            android:backgroundTint="?attr/colorSecondary"
+            android:insetLeft="0dp"
+            android:insetTop="0dp"
+            android:insetRight="0dp"
+            android:insetBottom="0dp"
+            app:cornerRadius="12dp"
+            app:icon="@drawable/ic_play_arrow"
+            app:iconGravity="textStart"
+            app:iconPadding="0dp"
+            app:layout_constraintBottom_toBottomOf="@+id/materialCardView2"
+            app:layout_constraintEnd_toEndOf="@+id/materialCardView2"
+            app:layout_constraintTop_toBottomOf="@+id/materialCardView2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

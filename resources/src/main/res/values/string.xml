@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="added">Added</string>
+    <string name="removed">removed of playlist</string>
+    <string name="album_producer">Album produced by</string>
+    <string name="songs">Songs</string>
+    <string name="song">Song</string>
+    <string name="disable">Disable</string>
+    <string name="undo">Undo</string>
+
+</resources>
