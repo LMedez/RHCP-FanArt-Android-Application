@@ -26,15 +26,12 @@ class AlbumsFragment : BaseFragment<FragmentAlbumsBinding>(FragmentAlbumsBinding
 
         binding.albumsRecycler.adapter = albumItemFormat2Adapter
 
-        musicDataViewModel.getAlbums().observe(viewLifecycleOwner) {
-            showAlbums(it)
-            binding.albumsCount.text = "${it.size} Albums"
-            binding.contentContainer.show()
-        }
-
-        musicDataViewModel.loadingState.observe(viewLifecycleOwner) {
-            if (it) binding.circularProgress.show()
-            else binding.circularProgress.hide()
+        musicDataViewModel.albums.observe(viewLifecycleOwner) {
+            if (it.isNotEmpty()) {
+                showAlbums(it)
+                binding.albumsCount.text = "${it.size} Albums"
+                binding.contentContainer.show()
+            }
         }
 
         albumItemFormat2Adapter.setFavListener { albumMetadata ->

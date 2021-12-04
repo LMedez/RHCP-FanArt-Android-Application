@@ -12,6 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RHCPFanArt">
         <activity
+            android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustNothing"
             android:name=".MainActivity"
             android:exported="true"

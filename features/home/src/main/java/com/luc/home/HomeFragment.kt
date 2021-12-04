@@ -44,9 +44,34 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
             }
         }.attach()
 
+        musicDataViewModel.getAlbums()
+        musicDataViewModel.getLimitSongs()
+        musicDataViewModel.albums.observe(viewLifecycleOwner){}
+
         musicDataViewModel.networkError.observe(viewLifecycleOwner) {
-            binding.contentContainer.hide()
-            binding.offlineErrorView.show(true)
+            if (it == null) {
+                binding.progressBar.show()
+                binding.offlineErrorView.hide()
+            } else {
+                binding.progressBar.hide()
+                binding.offlineErrorView.show(true)
+            }
+        }
+
+        musicDataViewModel.loadingState.observe(viewLifecycleOwner) {
+            if (it) {
+                binding.progressBar.show()
+                binding.contentContainer.hide()
+            } else {
+                binding.offlineErrorView.hide()
+                binding.progressBar.hide()
+                binding.contentContainer.show(false)
+            }
+        }
+
+        binding.retryButton.setOnClickListener {
+            musicDataViewModel.getLimitSongs()
+            musicDataViewModel.getAlbums()
         }
 
         binding.viewPager.isUserInputEnabled = false

@@ -2,6 +2,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 
 android {
+
     buildTypes {
         release {
             minifyEnabled true
@@ -12,7 +13,6 @@ android {
             minifyEnabled = false
             debuggable = true
             ext.enableCrashlytics = false
-
         }
     }
 

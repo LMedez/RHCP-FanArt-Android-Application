@@ -1,6 +1,7 @@
 package com.luc.home.overviewfragment
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
@@ -33,13 +34,16 @@ class OverviewFragment : BaseFragment<FragmentOverviewBinding>(FragmentOverviewB
         super.onViewCreated(view, savedInstanceState)
         binding.songsRecycler.adapter = songItemFormat1Adapter
 
-        musicDataViewModel.getAlbums().observe(viewLifecycleOwner, {
-            showAlbums(it)
+        musicDataViewModel.limitSongs.observe(viewLifecycleOwner, {
+            if (it.isNotEmpty()) {
+                showSongs(it)
+            }
         })
-
-        musicDataViewModel.getSongs().observe(viewLifecycleOwner, {
-            showSongs(it)
-        })
+        musicDataViewModel.albums.observe(viewLifecycleOwner) {
+            if (it.isNotEmpty()) {
+                showAlbums(it)
+            }
+        }
 
         songItemFormat1Adapter.setItemClickListener {
             musicPlayerViewModel.playOrToggleSong(it)
@@ -49,22 +53,6 @@ class OverviewFragment : BaseFragment<FragmentOverviewBinding>(FragmentOverviewB
             musicPlayerViewModel.playOrToggleSong(it)
         }
 
-        musicDataViewModel.networkError.observe(viewLifecycleOwner) {
-            binding.container.hide()
-            binding.progressBar.hide()
-        }
-
-        musicDataViewModel.loadingState.observe(viewLifecycleOwner) {
-            if (it) {
-                binding.container.hide()
-                binding.progressBar.show()
-            }
-            else {
-                binding.container.show()
-                binding.progressBar.hide()
-            }
-        }
-
         binding.seeAllAlbumsButton.setOnClickListener {
             val viewPager = parentFragment?.requireView()?.findViewById<ViewPager2>(R.id.viewPager)
             viewPager?.currentItem = 1
@@ -72,7 +60,6 @@ class OverviewFragment : BaseFragment<FragmentOverviewBinding>(FragmentOverviewB
     }
 
     private fun showAlbums(albumList: List<AlbumMetadata>) {
-
         binding.popularAlbumsRecycler.adapter =
             PopularAlbumsRecyclerViewAdapter(albumList) { album ->
                 findNavController().navigate(

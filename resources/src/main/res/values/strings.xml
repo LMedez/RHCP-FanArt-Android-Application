@@ -4,4 +4,6 @@
     <string name="play">Play</string>
     <string name="shuffleIsEnabled">Shuffle mode is already enabled</string>
     <string name="shuffleEnabled">Shuffle mode enabled</string>
+    <string name="connection_unavailable">Yor network is unavailable. Check your data or wifi connection</string>
+    <string name="retry">retry</string>
 </resources>

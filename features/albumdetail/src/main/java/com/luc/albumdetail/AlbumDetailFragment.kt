@@ -17,7 +17,6 @@ import com.luc.presentation.viewmodel.MusicPlayerViewModel
 import com.luc.presentation.viewmodel.UserMusicDataViewModel
 import com.luc.resources.adapter.SongItemFormat2Adapter
 import com.luc.resources.animation.loadUrl
-import com.luc.resources.utils.showSnackBar
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
