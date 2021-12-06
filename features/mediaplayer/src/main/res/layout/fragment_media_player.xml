@@ -16,7 +16,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="parent">
 
-        <fragment
+        <androidx.fragment.app.FragmentContainerView
             android:layout_weight="1"
             android:id="@+id/fragment"
             android:name="com.luc.mediaplayer.mediaplayerdetail.MediaPlayerDetailFragment"
@@ -41,6 +41,7 @@
                 android:layout_height="wrap_content">
 
                 <ImageButton
+                    android:contentDescription="@string/shuffle"
                     android:layout_gravity="center"
                     android:id="@+id/shuffle"
                     android:layout_width="@dimen/image_regular"
@@ -49,19 +50,20 @@
                     android:src="@drawable/ic_shuffle" />
 
                 <ImageButton
+                    android:contentDescription="@string/shuffle"
                     android:visibility="gone"
                     app:tint="?attr/colorPrimary"
                     android:id="@+id/shuffleActivated"
                     android:layout_width="@dimen/image_regular"
                     android:layout_height="@dimen/image_regular"
                     android:layout_gravity="center"
-                    android:layout_weight="1"
                     android:background="?attr/selectableItemBackgroundBorderless"
                     android:src="@drawable/ic_shuffle" />
 
             </FrameLayout>
 
             <ImageButton
+                android:contentDescription="@string/previous"
                 android:id="@+id/skipToPrevious"
                 android:rotation="180"
                 android:layout_width="@dimen/image_regular"
@@ -84,6 +86,7 @@
                 app:tint="?attr/colorPrimary" />
 
             <ImageButton
+                android:contentDescription="@string/next"
                 android:id="@+id/skipNext"
                 android:layout_width="@dimen/image_regular"
                 android:layout_height="@dimen/image_regular"
@@ -94,6 +97,7 @@
                 android:src="@drawable/ic_skip_next" />
 
             <ImageButton
+                android:contentDescription="@string/queue"
                 android:id="@+id/queueButton"
                 android:layout_width="@dimen/image_regular"
                 android:layout_height="@dimen/image_regular"

@@ -27,26 +27,23 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|top"
+            android:layout_margin="@dimen/padding_regular"
+            android:text="@string/album"
+            android:textAppearance="?attr/textAppearanceHeadline6" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Album"
-                android:textAppearance="?attr/textAppearanceHeadline6" />
-
-            <ImageButton
-                android:id="@+id/arrowBack"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="start|center"
-                android:layout_marginStart="@dimen/padding_regular"
-                android:background="?attr/selectableItemBackgroundBorderless"
-                android:src="@drawable/ic_arrow_back" />
-        </FrameLayout>
+        <ImageButton
+            android:id="@+id/arrowBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|top"
+            android:layout_margin="@dimen/padding_regular"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/back"
+            android:src="@drawable/ic_arrow_back" />
     </FrameLayout>
 
     <androidx.constraintlayout.widget.Guideline
@@ -68,6 +65,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline">
 
         <ImageView
+            android:contentDescription="@string/album"
             android:id="@+id/albumImage"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -90,7 +88,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/padding_small"
-            android:text="Stadium Acardium"
+            android:text="Album Title"
             android:textAppearance="?attr/textAppearanceHeadline6" />
 
         <TextView
@@ -119,7 +117,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/padding_regular_medium"
         android:backgroundTint="?attr/colorSecondary"
-        android:text="PLAY"
+        android:text="@string/play"
         app:icon="@drawable/ic_shuffle"
         app:layout_constraintBottom_toBottomOf="@+id/descriptionContainer"
         app:layout_constraintStart_toEndOf="@+id/materialCardView"
@@ -135,10 +133,10 @@
 
 
         <androidx.recyclerview.widget.RecyclerView
-            android:layout_marginTop="@dimen/padding_regular"
             android:id="@+id/songsRecycler"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/padding_regular"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@layout/song_item_format_2" />
 

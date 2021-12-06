@@ -6,4 +6,14 @@
     <string name="shuffleEnabled">Shuffle mode enabled</string>
     <string name="connection_unavailable">Yor network is unavailable. Check your data or wifi connection</string>
     <string name="retry">retry</string>
+    <string name="back">Back</string>
+    <string name="next">next</string>
+    <string name="previous">previous</string>
+    <string name="shuffle">shuffle</string>
+    <string name="queue">queue</string>
+    <string name="album_image">album image</string>
+    <string name="seek_bar">seek bar</string>
+    <string name="arrow_up">arrow up</string>
+    <string name="album">Album</string>
+    <string name="equalizer">equalizer</string>
 </resources>

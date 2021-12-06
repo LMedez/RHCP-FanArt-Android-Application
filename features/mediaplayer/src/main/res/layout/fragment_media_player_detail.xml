@@ -34,6 +34,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
+                android:contentDescription="@string/album_image"
                 android:scaleType="centerCrop"
                 android:id="@+id/albumImage"
                 android:layout_width="match_parent"
@@ -113,6 +114,7 @@
             app:layout_constraintTop_toTopOf="@+id/seekBar" />
 
         <com.google.android.material.slider.Slider
+            android:contentDescription="@string/seek_bar"
             android:id="@+id/seekBar"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -129,6 +131,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ImageButton
+        android:contentDescription="@string/arrow_up"
         android:rotation="180"
         android:id="@+id/showDetailButton"
         android:layout_width="wrap_content"

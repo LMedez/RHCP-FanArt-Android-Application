@@ -23,6 +23,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
+                android:contentDescription="@string/album_image"
                 android:id="@+id/songImage"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -70,9 +71,10 @@
                 android:text="5:06" />
 
             <ImageButton
+                android:contentDescription="@string/play"
                 android:id="@+id/playButton"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="@dimen/image_regular"
+                android:layout_height="@dimen/image_regular"
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:src="@drawable/ic_play" />
         </LinearLayout>

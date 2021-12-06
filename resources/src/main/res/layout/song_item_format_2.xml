@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout>
+
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
@@ -12,6 +13,7 @@
             android:id="@+id/equalizerIcon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:contentDescription="@string/equalizer"
             android:scaleX="0"
             android:scaleY="0"
             android:src="@drawable/ic_equalizer"
@@ -57,48 +59,45 @@
                 android:textAppearance="?attr/textAppearanceBody2" />
         </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/linearLayout"
+
+        <FrameLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <FrameLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+            <ImageButton
+                android:contentDescription="@string/favorites"
+                android:id="@+id/favButton"
+                android:layout_width="@dimen/image_regular"
+                android:layout_height="@dimen/image_regular"
+                android:layout_marginEnd="@dimen/padding_regular"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:scaleX="0"
+                android:scaleY="0"
+                android:src="@drawable/ic_favorite"
+                app:tint="?attr/colorPrimaryVariant" />
 
-                <ImageButton
-                    android:id="@+id/favButton"
-                    android:layout_width="@dimen/image_regular"
-                    android:layout_height="@dimen/image_regular"
-                    android:layout_marginEnd="@dimen/padding_regular"
-                    android:background="?attr/selectableItemBackgroundBorderless"
-                    android:scaleX="0"
-                    android:scaleY="0"
-                    android:src="@drawable/ic_favorite"
-                    app:tint="?attr/colorPrimaryVariant" />
+            <ImageButton
+                android:contentDescription="@string/favorites"
+                android:id="@+id/favBorderButton"
+                android:layout_width="@dimen/image_regular"
+                android:layout_height="@dimen/image_regular"
+                android:layout_marginEnd="@dimen/padding_regular"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_favorite_border"
+                app:tint="?attr/colorPrimaryVariant" />
+        </FrameLayout>
 
-                <ImageButton
-                    android:id="@+id/favBorderButton"
-                    android:layout_width="@dimen/image_regular"
-                    android:layout_height="@dimen/image_regular"
-                    android:layout_marginEnd="@dimen/padding_regular"
-                    android:background="?attr/selectableItemBackgroundBorderless"
-                    android:src="@drawable/ic_favorite_border"
-                    app:tint="?attr/colorPrimaryVariant" />
-            </FrameLayout>
-
-            <!--        <ImageButton-->
-            <!--            android:id="@+id/playlistAddButton"-->
-            <!--            android:layout_width="@dimen/image_regular"-->
-            <!--            android:layout_height="@dimen/image_regular"-->
-            <!--            android:layout_marginEnd="@dimen/padding_regular"-->
-            <!--            android:background="?attr/selectableItemBackgroundBorderless"-->
-            <!--            android:src="@drawable/ic_playlist_add"-->
-            <!--            app:tint="?attr/colorPrimaryVariant" />-->
-        </LinearLayout>
+        <!--        <ImageButton-->
+        <!--            android:id="@+id/playlistAddButton"-->
+        <!--            android:layout_width="@dimen/image_regular"-->
+        <!--            android:layout_height="@dimen/image_regular"-->
+        <!--            android:layout_marginEnd="@dimen/padding_regular"-->
+        <!--            android:background="?attr/selectableItemBackgroundBorderless"-->
+        <!--            android:src="@drawable/ic_playlist_add"-->
+        <!--            app:tint="?attr/colorPrimaryVariant" />-->
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

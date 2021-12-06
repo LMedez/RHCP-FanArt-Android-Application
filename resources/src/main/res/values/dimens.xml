@@ -15,7 +15,7 @@
 
     <!-- image size -->
     <dimen name="image_small">30dp</dimen>
-    <dimen name="image_regular">40dp</dimen>
+    <dimen name="image_regular">48dp</dimen>
     <dimen name="image_regular_medium">55dp</dimen>
     <dimen name="image_medium">65dp</dimen>
     <dimen name="image_wide">72dp</dimen>
