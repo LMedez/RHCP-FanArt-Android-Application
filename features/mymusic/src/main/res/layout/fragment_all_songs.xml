@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".allsongsfragment.AllSongsFragment">
 
     <LinearLayout
@@ -13,7 +12,7 @@
         android:layout_height="wrap_content"
         android:background="?attr/colorPrimary"
         android:orientation="vertical"
-        android:padding="@dimen/padding_regular"
+        android:padding="@dimen/padding_small"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent="0.2"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,28 +24,30 @@
 
             <ImageButton
                 android:id="@+id/arrowBackButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/image_regular"
+                android:layout_height="@dimen/image_regular"
                 android:layout_gravity="center"
                 android:layout_marginEnd="@dimen/padding_regular_medium"
                 android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/back"
                 android:src="@drawable/ic_arrow_back"
                 app:tint="?attr/colorSurface" />
 
             <com.google.android.material.card.MaterialCardView
-                app:cardElevation="8dp"
-                android:layout_marginEnd="@dimen/padding_regular"
-                app:cardCornerRadius="8dp"
-                android:background="?attr/colorSurface"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/padding_regular"
+                android:background="?attr/colorSurface"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp">
 
                 <SearchView
-                    android:queryHint="@string/search"
+                    android:contentDescription="@string/search"
                     android:id="@+id/searchView"
-                    android:iconifiedByDefault="false"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:iconifiedByDefault="false"
+                    android:queryHint="@string/search" />
 
             </com.google.android.material.card.MaterialCardView>
 
@@ -58,32 +59,35 @@
             android:layout_marginTop="@dimen/padding_regular">
 
             <ImageButton
+                android:contentDescription="@string/order"
                 android:id="@+id/orderButton"
-                app:tint="?attr/colorSurface"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/image_small"
+                android:layout_height="@dimen/image_small"
+                android:layout_marginStart="@dimen/padding_regular"
                 android:layout_marginEnd="@dimen/padding_regular"
                 android:background="?attr/selectableItemBackgroundBorderless"
-                android:src="@drawable/ic_order" />
+                android:src="@drawable/ic_order"
+                app:tint="?attr/colorSurface" />
 
             <TextView
-                android:textColor="?attr/colorSurface"
+                android:layout_gravity="center"
                 android:id="@+id/songsCount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?attr/textAppearanceSubtitle1" />
+                android:textAppearance="?attr/textAppearanceSubtitle1"
+                android:textColor="?attr/colorSurface" />
         </LinearLayout>
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:paddingTop="@dimen/padding_regular"
-        android:clipToPadding="false"
-        android:paddingBottom="?attr/actionBarSize"
-        android:orientation="vertical"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         android:id="@+id/allSongsRecycler"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/padding_regular"
+        android:paddingBottom="?attr/actionBarSize"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

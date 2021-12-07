@@ -24,10 +24,5 @@ class PlayListFragment : BaseFragment<FragmentPlayListBinding>(FragmentPlayListB
             playListAdapter.submitList(playlist)
             binding.circularProgress.hide()
         }
-
-//        binding.createPlaylist.setOnClickListener {
-//            findNavController().navigate(PlayListFragmentDirections.actionPlayListFragmentToCreatePlayListFragment())
-//        }
     }
-
 }

@@ -8,10 +8,11 @@
     tools:context=".favoritefragment.FavoriteFragment">
 
     <ImageButton
-        android:layout_margin="@dimen/padding_regular"
+        android:contentDescription="@string/back"
+        android:layout_margin="@dimen/padding_small"
         android:id="@+id/arrowBackButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/image_regular"
+        android:layout_height="@dimen/image_regular"
         android:layout_gravity="start|center"
         android:background="?attr/selectableItemBackgroundBorderless"
         android:src="@drawable/ic_arrow_back"

@@ -92,6 +92,7 @@
     </LinearLayout>
 
     <com.google.android.material.button.MaterialButton
+        android:contentDescription="@string/play"
         android:id="@+id/playButton"
         android:layout_width="@dimen/image_regular"
         android:layout_height="@dimen/image_regular"
@@ -99,7 +100,7 @@
         android:insetTop="0dp"
         android:insetRight="0dp"
         android:insetBottom="0dp"
-        app:cornerRadius="12dp"
+        app:cornerRadius="@dimen/corner_regular"
         app:icon="@drawable/ic_play_arrow"
         app:iconGravity="textStart"
         app:iconPadding="0dp"

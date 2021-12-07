@@ -13,7 +13,7 @@
             android:layout_width="@dimen/image_regular_medium"
             android:layout_height="@dimen/image_regular_medium"
             android:layout_marginStart="@dimen/padding_regular"
-            app:cardCornerRadius="@dimen/padding_small"
+            app:cardCornerRadius="@dimen/corner_small"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">

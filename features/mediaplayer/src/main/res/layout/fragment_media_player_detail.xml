@@ -26,7 +26,7 @@
 
         <com.google.android.material.card.MaterialCardView
             android:layout_margin="@dimen/padding_regular"
-            app:cardCornerRadius="@dimen/padding_small"
+            app:cardCornerRadius="@dimen/corner_small"
             android:id="@+id/materialCardView"
             android:layout_width="@dimen/image_regular"
             android:layout_height="@dimen/image_regular"
