@@ -28,15 +28,16 @@ class MusicDataRepositoryImpl(
         )
     }
 
-    override fun getLastSongsPlayed() =
-        localData.getLastSongsPlayed()
-
     override suspend fun addPlayList(
         playlistEntity: PlaylistEntity,
         playlistSongEntity: List<SongMetadataEntity>,
     ) {
-        localData.addPlayList(playlistEntity, playlistSongEntity)
+        localData.insertPlayList(playlistEntity, playlistSongEntity)
     }
+
+    override fun getLastSongsPlayed() =
+        localData.getLastSongsPlayed()
+
 
     override suspend fun getFavSong() = localData.getFavSongs()
     override suspend fun getFavAlbums() = localData.getFavAlbums()

@@ -52,7 +52,7 @@ interface LocalMusicDAO {
     suspend fun insertAlbum(albumMetadataEntity: List<AlbumMetadataEntity>)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertPlaylist(playlist: PlaylistEntity)
+    suspend fun insertPlaylist(playlist: PlaylistEntity) : Long
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertLastSongPlayed(lastSongPlayedEntity: LastSongPlayedEntity)

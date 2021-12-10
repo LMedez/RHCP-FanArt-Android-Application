@@ -1,11 +1,9 @@
 package com.luc.data.local
 
-import android.util.Log
 import com.luc.common.entities.*
 import com.luc.common.entities.relations.PlaylistSongCrossRef
 import com.luc.common.model.AlbumMetadata
 import com.luc.common.model.SongMetadata
-import kotlinx.coroutines.flow.collect
 
 class LocalMusicSource(private val localMusicDAO: LocalMusicDAO) {
 
@@ -47,29 +45,15 @@ class LocalMusicSource(private val localMusicDAO: LocalMusicDAO) {
 
     fun getLastSongsPlayed(limit: Int = 15) = localMusicDAO.getLastSongsPlayed(limit)
 
-    // Work in future releases
-    suspend fun addPlayList(
-        playlistEntity: PlaylistEntity,
+    suspend fun insertPlayList(
+        playlist: PlaylistEntity,
         songMetadataList: List<SongMetadataEntity>,
     ) {
+        val playlistId = localMusicDAO.insertPlaylist(playlist)
         songMetadataList.forEach {
-            localMusicDAO.insertSong(it)
-        }
-        localMusicDAO.insertPlaylist(playlistEntity)
-        songMetadataList.forEach {
-            localMusicDAO.insertPlaylistSongCrossRef(
-                PlaylistSongCrossRef(
-                    playlistId = playlistEntity.playlistId,
-                    id = it.id)
-            )
+            localMusicDAO.insertPlaylistSongCrossRef(PlaylistSongCrossRef(playlistId = playlistId, it.id))
         }
 
-
-        localMusicDAO.getPlayList().collect { list ->
-            list.forEach {
-                Log.d("tests", it.songs.size.toString())
-            }
-        }
     }
 
     fun getPlayList() =

@@ -1,6 +1,7 @@
 package com.luc.mymusic.allsongsfragment
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.SearchView
 import androidx.navigation.fragment.findNavController
@@ -13,6 +14,7 @@ import com.luc.mymusic.R
 import com.luc.mymusic.databinding.FragmentAllSongsBinding
 import com.luc.presentation.viewmodel.MusicDataViewModel
 import com.luc.presentation.viewmodel.MusicPlayerViewModel
+import com.luc.presentation.viewmodel.PlaylistViewModel
 import com.luc.resources.adapter.SongItemFormat5Adapter
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
@@ -20,6 +22,7 @@ class AllSongsFragment : BaseFragment<FragmentAllSongsBinding>(FragmentAllSongsB
 
     private var previousBackStack: Int? = null
     private val musicDataViewModel: MusicDataViewModel by sharedViewModel()
+    private val playlistViewModel: PlaylistViewModel by sharedViewModel()
     private val songItemFormat5Adapter = SongItemFormat5Adapter()
     private val musicPlayerViewModel: MusicPlayerViewModel by sharedViewModel()
     private var songList: List<SongMetadata> = listOf()
@@ -38,30 +41,39 @@ class AllSongsFragment : BaseFragment<FragmentAllSongsBinding>(FragmentAllSongsB
 
         previousBackStack = findNavController().previousBackStackEntry?.destination?.id
 
-        //findNavController().previousBackStackEntry?.savedStateHandle?.set("key", songsSelected)
-
-        binding.searchView.setOnQueryTextListener(searchListener)
-
-        binding.allSongsRecycler.adapter = songItemFormat5Adapter
-
         musicDataViewModel.getAllSongs().observe(viewLifecycleOwner) {
             songList = it
             binding.songsCount.text = it.size.toString() + " " + getString(R.string.songs)
             songItemFormat5Adapter.songs = it
         }
 
+        binding.searchView.setOnQueryTextListener(searchListener)
+
+        binding.allSongsRecycler.adapter = songItemFormat5Adapter
+
+
         binding.arrowBackButton.setOnClickListener {
             findNavController().popBackStack()
-        }
-
-        songItemFormat5Adapter.setOnPlayListener {
-            musicPlayerViewModel.playOrToggleSong(it)
         }
 
         binding.orderButton.setOnClickListener {
             songItemFormat5Adapter.songs = songList.sortedBy { it.albumName }
             binding.allSongsRecycler.smoothScrollToPosition(0)
         }
+
+        songItemFormat5Adapter.setOnPlayListener {
+            musicPlayerViewModel.playOrToggleSong(it)
+        }
+
+        songItemFormat5Adapter.setOnPlaylistListener {
+            playlistViewModel.addSongToPlaylist(it)
+        }
+
+    }
+
+    override fun onStop() {
+        playlistViewModel.clearPlaylist()
+        super.onStop()
     }
 
     private val searchListener = object : SearchView.OnQueryTextListener {

@@ -3,4 +3,9 @@
     <style name="ShapeAppearance.Rfa.SmallComponent" parent="ShapeAppearance.MaterialComponents.SmallComponent">
         <item name="cornerSize">10dp</item>
     </style>
+
+    <style name="ShapeAppearance.Rfa.MinimizedSheet" parent="ShapeAppearance.MaterialComponents.MediumComponent">
+        <item name="cornerSizeTopLeft">@dimen/corner_medium</item>
+    </style>
+
 </resources>

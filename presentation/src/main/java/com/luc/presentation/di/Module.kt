@@ -8,6 +8,7 @@ import org.koin.dsl.module
 
 val presentationModule = module {
     viewModel { HomeFragmentViewModel() }
+    viewModel { PlaylistViewModel() }
     viewModel { MainActivityViewModel(get()) }
     viewModel { MusicPlayerViewModel(get()) }
     viewModel { AlbumDetailViewModel(get()) }

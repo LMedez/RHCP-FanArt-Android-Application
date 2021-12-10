@@ -10,17 +10,29 @@ import com.luc.resources.databinding.SongItemFormat5Binding
 
 class SongItemFormat5Adapter : BaseSongAdapter(R.layout.song_item_format_5) {
     override val differ = AsyncListDiffer(this, diffCallback)
-    private var onPlayListener: ((SongMetadata) -> Unit)? = null
 
+    private var onPlayListener: ((SongMetadata) -> Unit)? = null
     fun setOnPlayListener(listener: (SongMetadata) -> Unit) {
         onPlayListener = listener
     }
+
+    private var onPlaylistListener: ((SongMetadata) -> Unit)? = null
+    fun setOnPlaylistListener(listener: (SongMetadata) -> Unit) {
+        onPlaylistListener = listener
+    }
+
     override fun onBindViewHolder(holder: SongViewHolder, position: Int) {
         val binding = holder.binding as SongItemFormat5Binding
         val song = songs[position]
         with(binding) {
             root.setOnClickListener {
                 onItemClickListener?.let { click ->
+                    click(song)
+                }
+            }
+
+            playlistAddButton.setOnClickListener {
+                onPlaylistListener?.let { click ->
                     click(song)
                 }
             }

@@ -17,4 +17,9 @@
     <string name="album">Album</string>
     <string name="equalizer">equalizer</string>
     <string name="order">order</string>
+    <string name="library">library</string>
+    <string name="add_to_playlist">add to playlist</string>
+    <string name="selected">selected</string>
+    <string name="new_playlist">new playlist</string>
+    <string name="clear">clear</string>
 </resources>

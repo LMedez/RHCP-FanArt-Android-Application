@@ -5,11 +5,10 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath (BuildPlugins.androidGradlePlugin)
-        classpath (BuildPlugins.kotlinGradlePlugin)
-        classpath (BuildPlugins.gmsPlugin)
+        classpath(BuildPlugins.androidGradlePlugin)
+        classpath(BuildPlugins.kotlinGradlePlugin)
+        classpath(BuildPlugins.gmsPlugin)
         classpath(BuildPlugins.safeArgsPlugin)
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.31")
 
     }
 }

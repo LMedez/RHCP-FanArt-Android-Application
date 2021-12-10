@@ -29,6 +29,12 @@ class SongItemFormat2Adapter : BaseSongAdapter(R.layout.song_item_format_2) {
         onFavListener = listener
     }
 
+    private var onPlaylistListener: ((SongMetadata) -> Unit)? = null
+
+    fun setPlaylistListener(listener: (SongMetadata) -> Unit) {
+        onPlaylistListener = listener
+    }
+
     override fun onBindViewHolder(holder: SongViewHolder, position: Int) {
         val binding = holder.binding as SongItemFormat2Binding
         val song = songs[position]
@@ -42,6 +48,12 @@ class SongItemFormat2Adapter : BaseSongAdapter(R.layout.song_item_format_2) {
             favBorderButton.setOnClickListener {
                 favButton.startFavAnimation()
                 onFavListener?.let { click ->
+                    click(song)
+                }
+            }
+
+            playlistAddButton.setOnClickListener {
+                onPlaylistListener?.let { click ->
                     click(song)
                 }
             }

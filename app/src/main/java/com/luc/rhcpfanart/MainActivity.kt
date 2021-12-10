@@ -72,7 +72,7 @@ class MainActivity : AppCompatActivity() {
     /* on destination changes, the fragment will be hid if the destiny isn't HomeFragment */
     private val onDestinationChanged =
         NavController.OnDestinationChangedListener { _, destination, _ ->
-            if (destination.id != R.id.homeFragment && destination.id != R.id.allSongs && destination.id != R.id.favFragment) {
+            if (destination.id != R.id.homeFragment && destination.id != R.id.favFragment) {
                 supportFragmentManager.findFragmentById(R.id.mediaPlayerFragment)
                     ?.let { fragment ->
                         fragment.view?.slideDown()

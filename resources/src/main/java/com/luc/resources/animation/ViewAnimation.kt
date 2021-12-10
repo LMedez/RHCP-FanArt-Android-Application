@@ -116,3 +116,26 @@ fun ImageView.loadUrl(imageUrl: String) {
         .into(this)
 
 }
+
+// TextViewExtensions
+fun TextView.setTextWithAnimation(
+    newText: String,
+    durationMs: Long = 150,
+) {
+    animate().alpha(0f).setUpdateListener {
+        if (it.animatedValue as Float > 0.7){
+            text = newText
+            it.reverse()
+        }
+
+    }.duration = durationMs
+}
+
+fun ImageView.loadUrlWithAnimation(imageUrl: String) {
+    animate().alpha(0f).setUpdateListener {
+        if (it.animatedValue as Float > 0.7) {
+            loadUrl(imageUrl)
+            it.reverse()
+        }
+    }.duration = 100
+}

@@ -14,6 +14,7 @@ import com.luc.common.resource.NetworkStatus
 import com.luc.core.BaseFragment
 import com.luc.presentation.viewmodel.AlbumDetailViewModel
 import com.luc.presentation.viewmodel.MusicPlayerViewModel
+import com.luc.presentation.viewmodel.PlaylistViewModel
 import com.luc.presentation.viewmodel.UserMusicDataViewModel
 import com.luc.resources.adapter.SongItemFormat2Adapter
 import com.luc.resources.animation.loadUrl
@@ -26,6 +27,7 @@ class AlbumDetailFragment :
 
     private val albumDetailViewModel: AlbumDetailViewModel by viewModel()
     private val musicPlayerViewModel: MusicPlayerViewModel by sharedViewModel()
+    private val playlistViewModel: PlaylistViewModel by sharedViewModel()
     private val userMusicDataViewModel: UserMusicDataViewModel by sharedViewModel()
 
     private val songItemFormat2Adapter = SongItemFormat2Adapter()
@@ -86,6 +88,10 @@ class AlbumDetailFragment :
                 else -> {
                 }
             }
+        }
+
+        songItemFormat2Adapter.setPlaylistListener {
+            playlistViewModel.addSongToPlaylist(it)
         }
 
         userMusicDataViewModel.favSongs.observe(viewLifecycleOwner) {

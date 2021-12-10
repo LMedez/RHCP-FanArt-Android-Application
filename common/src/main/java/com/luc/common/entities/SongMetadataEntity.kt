@@ -1,11 +1,12 @@
 package com.luc.common.entities
 
 import androidx.room.Entity
+import androidx.room.Ignore
 import androidx.room.PrimaryKey
 import com.luc.common.model.SongMetadata
 
 @Entity
-data class SongMetadataEntity(
+data class SongMetadataEntity (
     @PrimaryKey(autoGenerate = false)
     val id: String = "",
     val title: String = "",

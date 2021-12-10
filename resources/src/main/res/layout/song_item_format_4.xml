@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -10,8 +11,8 @@
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/materialCardView"
-            android:layout_width="@dimen/image_regular_medium"
-            android:layout_height="@dimen/image_regular_medium"
+            android:layout_width="@dimen/image_medium"
+            android:layout_height="@dimen/image_medium"
             android:layout_marginStart="@dimen/padding_regular"
             app:cardCornerRadius="@dimen/corner_small"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -19,10 +20,10 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
-                android:contentDescription="@string/album_image"
                 android:id="@+id/songImage"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:contentDescription="@string/album_image"
                 android:scaleType="centerCrop" />
         </com.google.android.material.card.MaterialCardView>
 
@@ -44,18 +45,21 @@
                 android:textAppearance="?attr/textAppearanceSubtitle2" />
 
             <TextView
-                android:textAppearance="?attr/textAppearanceCaption"
                 android:id="@+id/songAlbum"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="2 days" />
+                android:text="2 days"
+                android:textAppearance="?attr/textAppearanceCaption" />
         </LinearLayout>
 
-        <TextView
+        <ImageButton
+            android:contentDescription="@string/removed"
+            android:id="@+id/remove"
+            android:layout_width="@dimen/image_regular"
+            android:layout_height="@dimen/image_regular"
             android:layout_marginEnd="@dimen/padding_regular"
-            android:id="@+id/songTime"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_remove_circle"
             android:textAppearance="?attr/textAppearanceBody2"
             app:layout_constraintBottom_toBottomOf="@+id/linearLayout3"
             app:layout_constraintEnd_toEndOf="parent"

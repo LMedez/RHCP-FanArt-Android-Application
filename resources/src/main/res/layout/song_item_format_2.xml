@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/box_regular"
         android:background="?attr/selectableItemBackground"
@@ -61,6 +61,7 @@
 
 
         <FrameLayout
+            android:id="@+id/frameLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -68,36 +69,40 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageButton
-                android:contentDescription="@string/favorites"
                 android:id="@+id/favButton"
                 android:layout_width="@dimen/image_regular"
                 android:layout_height="@dimen/image_regular"
                 android:layout_marginEnd="@dimen/padding_regular"
                 android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/favorites"
                 android:scaleX="0"
                 android:scaleY="0"
                 android:src="@drawable/ic_favorite"
                 app:tint="?attr/colorPrimaryVariant" />
 
             <ImageButton
-                android:contentDescription="@string/favorites"
                 android:id="@+id/favBorderButton"
                 android:layout_width="@dimen/image_regular"
                 android:layout_height="@dimen/image_regular"
                 android:layout_marginEnd="@dimen/padding_regular"
                 android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/favorites"
                 android:src="@drawable/ic_favorite_border"
                 app:tint="?attr/colorPrimaryVariant" />
         </FrameLayout>
 
-        <!--        <ImageButton-->
-        <!--            android:id="@+id/playlistAddButton"-->
-        <!--            android:layout_width="@dimen/image_regular"-->
-        <!--            android:layout_height="@dimen/image_regular"-->
-        <!--            android:layout_marginEnd="@dimen/padding_regular"-->
-        <!--            android:background="?attr/selectableItemBackgroundBorderless"-->
-        <!--            android:src="@drawable/ic_playlist_add"-->
-        <!--            app:tint="?attr/colorPrimaryVariant" />-->
+        <ImageButton
+            android:contentDescription="@string/add_to_playlist"
+            android:layout_marginEnd="@dimen/padding_small"
+            android:id="@+id/playlistAddButton"
+            android:layout_width="@dimen/image_regular"
+            android:layout_height="@dimen/image_regular"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_playlist_add"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/frameLayout"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="?attr/colorPrimaryVariant" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -14,7 +14,7 @@
 
 
     <!-- image size -->
-    <dimen name="image_small">30dp</dimen>
+    <dimen name="image_small">38dp</dimen>
     <dimen name="image_regular">48dp</dimen>
     <dimen name="image_regular_medium">55dp</dimen>
     <dimen name="image_medium">65dp</dimen>
@@ -36,6 +36,8 @@
     <dimen name="corner_regular">8dp</dimen>
     <dimen name="corner_regular_medium">12dp</dimen>
     <dimen name="corner_medium">24dp</dimen>
+    <dimen name="corner_wide">32dp</dimen>
+    <dimen name="corner_wide_medium">48dp</dimen>
 
     <!-- box size -->
     <dimen name="box_regular">65dp</dimen>
