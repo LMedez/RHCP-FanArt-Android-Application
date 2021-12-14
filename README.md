@@ -1,6 +1,6 @@
 # RHCP Fan art application
 
-<img src="https://drive.google.com/file/d/1wl547qqnWpfpuNCU3joAeBA9G6A2X3Zm/view?usp=sharing" alt="Main"/>
+<img src="https://drive.google.com/uc?export=download&id=1wl547qqnWpfpuNCU3joAeBA9G6A2X3Zm" alt="Screenshot"/>
 
 This Android application is a music streaming of Red hot chili peppers artist. It is built around the [Universal Android Music Player](https://github.com/android/uamp).
 The application uses the following features and apis for development:
