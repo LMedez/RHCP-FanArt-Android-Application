@@ -69,7 +69,6 @@ RHCP Fan Art                            # Root Package
 |      ├── MusicService.kt              # Service for background music
 |      └── MusicServiceConnection.kt    # Supporting class for connection with service
 |             
-|
 ├── presentation
 |   ├── com.luc.presentation
 │      ├── di                           # DI modules
@@ -103,7 +102,8 @@ RHCP Fan Art                            # Root Package
 |         ├── favoritefragment
 |         └── playlistfragment
 |        
-├── resources                           # Resource module for application resources such as animations, icons, colors, themes, items layout, etc.
+├── resources                           # Resource module for application resources such as animations,
+|                                                              icons, colors, themes, items layout, etc.
 |   ├── com.luc.resources
 │      ├── adapter                
 │      ├── animation                
