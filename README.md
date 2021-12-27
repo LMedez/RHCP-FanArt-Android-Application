@@ -27,6 +27,7 @@ This Android application is a music streaming of Red hot chili peppers artist. I
 * [Flow](https://developer.android.com/kotlin/flow) Stream of value that returns from suspend function.
 * [Coroutine](https://developer.android.com/kotlin/coroutines) Concurrency design pattern for asynchronous programming.
 * [Glide](https://github.com/bumptech/glide) - Image loading.
+* [Firestore](https://firebase.google.com/docs/firestore) - Remote data source
 
 ## Architectures
 
@@ -117,7 +118,3 @@ RHCP Fan Art                            # Root Package
        └── Utils.kt                     # Commons utils
 
 ```
-
-
-
-
