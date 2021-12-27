@@ -39,6 +39,85 @@ This follow Google recommended [Guide to app architecture](https://developer.and
 * **ViewModel**: It keeps the logic away from View layer, provides data streams for UI and handle user interactions.
 * **Model**: Repository pattern, data layers that provide interface to manipulate data from both the local and remote data sources. The local data sources will serve as [single source of truth](https://en.wikipedia.org/wiki/Single_source_of_truth).
 
+
+## Package Structures
+
 The project is Multimodule and each module has its own build.gradle file. All dependencies are managed by the [Dependency.kt](https://github.com/LMedez/RHCPFanArtAndroidApplication/blob/master/buildSrc/src/main/kotlin/Dependencies.kt)
+
+```
+RHCP Fan Art                            # Root Package
+├── data                                # Data module
+│   ├── com.luc.data                  
+|      ├── di                           # DI modules
+|      ├── firestore                    # Remote source data by Firebase Firestore
+│      ├── local                        # Room database source data
+|      └── repository                   # Repository for CRUD operations
+|
+├── domain                              # Domain module
+│   ├── com.luc.domain            
+|      ├── di                           # DI modules
+|      ├── repository                   # Repository to use by use cases
+|      └── usecases                     # Uses cases to manage data source
+│
+├── musicservice               
+│   ├── com.luc.musicservice            
+|      ├── di                           # DI modules for the music service
+|      ├── extensions                   # Useful extensions for MediaMetadataCompat
+|      ├── listeners                    # Listeners for music service events
+|      ├── Datasource.kt                # Source of music data
+|      ├── MusicNotificationManager.kt  # Manage all notification content 
+|      ├── MusicService.kt              # Service for background music
+|      └── MusicServiceConnection.kt    # Supporting class for connection with service
+|             
+|
+├── presentation
+|   ├── com.luc.presentation
+│      ├── di                           # DI modules
+│      └── viewmodel                    # ViewModels for user events
+|
+├── app                                 # App module
+|   ├── com.luc.rhcpfanart
+│      ├── di                           # DI modules
+│      └── MainActivity.kt              # Start point of application
+|
+├── features                            # Feature package
+|   ├── albumdetail                     # Albumdetail module
+|   |  └── com.luc.albumdetail          
+|   |     └── AlbumDetailFragment.kt    
+|   |  
+|   ├── home                            # Home module for home screen
+|   |  └── com.luc.home
+|   |     ├── albumfragment
+|   |     ├── overviewfragment
+|   |     ├── HomeFragment.kt
+|   |     └── ViewPagerAdapter.kt
+|   |     
+|   ├── mediaplayer                      # Mediaplayer module for mediaplayer fragment that handles music events
+|   |  └── com.luc.mediaplayer
+|   |     ├── mediaplayerdetail
+|   |     └── MediaPlayerFragment.kt
+|   |      
+|   ├── mymusic                          # mymusic module that manage the music of the user
+|      └── com.luc.mymusic
+|         ├── allsongsfragment
+|         ├── favoritefragment
+|         └── playlistfragment
+|        
+├── resources                           # Resource module for application resources such as animations, icons, colors, themes, items layout, etc.
+|   ├── com.luc.resources
+│      ├── adapter                
+│      ├── animation                
+│      ├── utils                
+│      └── AttrExtensions.kt            
+│     
+├── common                              # Common module
+    ├── com.luc.common
+       ├── entities                     # Common entities for local database
+       ├── model                        # Models of data for application
+       └── Utils.kt                     # Commons utils
+
+```
+
+
 
 
