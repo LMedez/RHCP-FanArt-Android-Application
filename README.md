@@ -29,7 +29,7 @@ This Android application is a music streaming of Red hot chili peppers artist. I
 * [Glide](https://github.com/bumptech/glide) - Image loading.
 
 ## Architectures
-![MVVM](screenshots/Architecture.jpg)
+![MVVM](screenshots/Architecture.jpeg)
 
 This follow Google recommended [Guide to app architecture](https://developer.android.com/jetpack/guide) to structure our architecture based on MVVM, reactive UI using LiveData/Flow observables with data binding and view binding.
 
