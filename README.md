@@ -103,9 +103,8 @@ RHCP Fan Art                            # Root Package
 |         ├── favoritefragment
 |         └── playlistfragment
 |        
-├── resources                           # Resource module for application resources such as animations,
-|                                                              icons, colors, themes, items layout, etc.
-|   ├── com.luc.resources
+├── resources                           # Resource module for application resources such as animations,                                                           
+|   ├── com.luc.resources                                     icons, colors, themes, items layout, etc.
 │      ├── adapter                
 │      ├── animation                
 │      ├── utils                
